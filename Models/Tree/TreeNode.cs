@@ -8,6 +8,6 @@ namespace Models.Tree
         [Required]
         public string NodeName { get; set; }
 
-        public TreeNode Parent { get; set; }
+        public int? ParentId { get; set; }
     }
 }
