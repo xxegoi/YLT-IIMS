@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Create";
 
-
+    Model.Parent = ViewBag.Parent ;
 }
 
 <h2>Create</h2>
@@ -23,6 +23,10 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NodeName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NodeName, "", new { @class = "text-danger" })
+            </div>
+             <div class="col-md-10 hidden">
+                @Html.EditorFor(model => model.Parent, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Parent, "", new { @class = "text-danger" })
             </div>
         </div>
 

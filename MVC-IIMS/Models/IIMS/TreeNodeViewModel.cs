@@ -14,15 +14,26 @@ namespace MVC_IIMS.Models.IIMS
 
         public virtual TreeNodeViewModel Parent { get; set; }
 
+        public virtual List<TreeNodeViewModel> Childs { get; set; }
+
+        public int? ParentId { get; set; }
+
         public TreeNode ToTreeNode()
         {
             TreeNode entry = new TreeNode();
             entry.Id = this.Id;
             entry.NodeName = this.NodeName;
+            entry.ParentId = this.ParentId;
+
             if(this.Parent!=null)
                 entry.ParentId = this.Parent.Id;
 
             return entry;
+        }
+
+        public override string ToString()
+        {
+            return this.NodeName;
         }
 
         public TreeNodeViewModel(TreeNode entry)
@@ -31,6 +42,7 @@ namespace MVC_IIMS.Models.IIMS
             {
                 this.Id = entry.Id;
                 this.NodeName = entry.NodeName;
+                this.ParentId = entry.ParentId;
             }
            
         }

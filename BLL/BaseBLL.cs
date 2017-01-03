@@ -7,7 +7,7 @@ namespace BLL
 {
     public partial class BaseBLL : IBLL.IBLL
     {
-        IDAL.IDAL dal = new DAL.MsSqlDAL();
+        protected IDAL.IDAL dal = new DAL.MsSqlDAL();
 
         public int Add<T>(T model) where T : class, new()
         {
@@ -19,12 +19,12 @@ namespace BLL
             return dal.BatchModidy<T>(model, where, propertyes);
         }
 
-        public int Delete<T>(T model) where T : class, new()
+        public virtual int Delete<T>(T model) where T : class, new()
         {
             return dal.Delete<T>(model);
         }
 
-        public int DeleteByWhere<T>(Expression<Func<T, bool>> where) where T : class, new()
+        public virtual int DeleteByWhere<T>(Expression<Func<T, bool>> where) where T : class, new()
         {
             return dal.DeleteByWhere<T>(where);
         }

@@ -52,7 +52,9 @@
     <Compile Include="Admin\SystemUser.cs" />
     <Compile Include="Common\BaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tree\Supplier.cs" />
     <Compile Include="Tree\TreeNode.cs" />
+    <Compile Include="Tree\TreeNode_EasyUI_JSON.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

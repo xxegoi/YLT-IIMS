@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "MenuTree";
+}
+
+<h2>MenuTree</h2>
+
+<ul id="tree" class="easyui-tree" data-options="url:'GetTree'"></ul>
+
+<script>
+    $('#tree').tree({
+
+        lines: true,
+        animate: true,
+    });
+</script>
